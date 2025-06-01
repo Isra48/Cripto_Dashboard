@@ -4634,6 +4634,7 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.4.19"
     framer-motion: "npm:^12.15.0"
     globals: "npm:^16.0.0"
+    gridstack: "npm:^12.2.1"
     postcss: "npm:^8.5.4"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
@@ -5628,6 +5629,13 @@ __metadata:
   version: 1.4.0
   resolution: "graphemer@npm:1.4.0"
   checksum: 10c0/e951259d8cd2e0d196c72ec711add7115d42eb9a8146c8eeda5b8d3ac91e5dd816b9cd68920726d9fd4490368e7ed86e9c423f40db87e2d8dfafa00fa17c3a31
+  languageName: node
+  linkType: hard
+
+"gridstack@npm:^12.2.1":
+  version: 12.2.1
+  resolution: "gridstack@npm:12.2.1"
+  checksum: 10c0/59ae19e219b1ff70cc1622a2246ca1ffafe1b8f4e9afa713f4a63000afef038c276b7ab3b143725962ae75977ceefdcb7a560988a0c03ba06f88d79585ecd7a2
   languageName: node
   linkType: hard
 
