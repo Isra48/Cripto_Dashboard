@@ -1,5 +1,5 @@
 import type { HistoryPoint } from '../interfaces/crypto.interface'
-import { historyCryptosMock } from '../mocks/historyCryptos.mock'
+//import { historyCryptosMock } from '../mocks/historyCryptos.mock'
 const baseUrl = import.meta.env.VITE_BASEURL 
 const apiKey = import.meta.env.VITE_APIKEY
 

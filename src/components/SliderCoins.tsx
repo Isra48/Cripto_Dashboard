@@ -11,24 +11,22 @@ const SliderCoins = ({ coins }: Props) => {
     const selectedCoin = useCryptoStore((s) => s.selectedCoin);
     const setSelectedCoin = useCryptoStore((s) => s.setSelectedCoin);
 
- 
+
 
     return (
         <div className="flex flex-nowrap gap-6 w-full overflow-x-auto mt-2 py-4 px-4 scrollbar-hide scrollbar-hover">
             {coins.map((coin) => {
-                const isNegative = coin.price_change_percentage_24h < 0;
-                const TrendIcon = isNegative ? TrendingDown : TrendingUp;
 
                 return (
                     <div onClick={() => {
-                        
+
                         setSelectedCoin(coin);
                     }
                     } key={coin.id}>
- <Card
-  className={`min-w-[200px] w-[220px] flex-shrink-0 cursor-pointer transition 
+                        <Card
+                            className={`min-w-[200px] w-[220px] flex-shrink-0 cursor-pointer transition 
     ${selectedCoin?.id === coin.id ? 'ring-2 ring-blue-500 shadow-lg' : 'hover:shadow-xl'}`}
->
+                        >
 
                             {/* Quitamos posibles márgenes verticales */}
                             <CardHeader className="flex items-center gap-4 pb-0">
@@ -45,8 +43,8 @@ const SliderCoins = ({ coins }: Props) => {
                                 </p>
                                 <div
                                     className={`flex items-center text-sm font-medium ${coin.price_change_percentage_24h < 0
-                                            ? 'text-red-500'
-                                            : 'text-green-600'
+                                        ? 'text-red-500'
+                                        : 'text-green-600'
                                         }`}
                                 >
                                     {coin.price_change_percentage_24h < 0 ? (
