@@ -82,7 +82,7 @@ const { data: coins = [], isLoading, error } = useQuery<CryptoCoin[], Error>({
           </div>
         </div>
 
-        <Ranking />
+        <Ranking coins={coins} />
 
 
         <ReactQueryDevtools initialIsOpen={false} />
