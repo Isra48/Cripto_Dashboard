@@ -82,7 +82,23 @@ const { data: coins = [], isLoading, error } = useQuery<CryptoCoin[], Error>({
           </div>
         </div>
 
-        <Ranking coins={coins} />
+    {isLoading ? (
+  <div className="col-span-12 md:col-span-8 bg-white rounded-lg shadow-lg p-6 mt-4">
+    <Skeleton className="h-6 w-1/2 mb-4" />
+    <Skeleton className="h-4 w-40 mb-4" />
+    {[...Array(5)].map((_, i) => (
+      <div key={i} className="flex gap-4 justify-between items-center mb-3">
+        <Skeleton className="h-4 w-1/4" />
+        <Skeleton className="h-4 w-1/6" />
+        <Skeleton className="h-4 w-1/6" />
+        <Skeleton className="h-4 w-1/4 hidden sm:block" />
+        <Skeleton className="h-4 w-1/4 hidden md:block" />
+      </div>
+    ))}
+  </div>
+) : (
+  <Ranking coins={coins} />
+)}
 
 
         <ReactQueryDevtools initialIsOpen={false} />
