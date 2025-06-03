@@ -2,7 +2,8 @@ import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image } from "@h
 
 const SliderCoins = () => {
   return (
-     <div className="flex flex-nowrap gap-6 w-full overflow-x-auto mt-2 py-4 scrollbar-hide scrollbar-hover">
+    
+        <div className="flex flex-nowrap gap-6 w-full overflow-x-auto mt-2 py-4 px-4 scrollbar-hide scrollbar-hover">
   {Array.from({ length: 10 }).map((_, index) => (
     <Card
       key={index}

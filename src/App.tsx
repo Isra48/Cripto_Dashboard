@@ -1,11 +1,11 @@
+import React, { useEffect } from 'react'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { useQuery } from '@tanstack/react-query'
-import { useEffect } from 'react'
 import { GridStack } from 'gridstack'
-
 import 'gridstack/dist/gridstack.min.css'
 import './App.css'
 import SliderCoin from './components/SliderCoins'
+import Details from './components/Details'
 
 function FakeQueryTest() {
   const { data, isLoading } = useQuery({
@@ -30,6 +30,9 @@ function App() {
     })
   }, [])
 
+ 
+
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 flex justify-center">
       <div className="w-full max-w-screen-xl px-4 py-8">
@@ -43,8 +46,23 @@ function App() {
           Visualización en tiempo real de las principales{' '}
           <span className="font-semibold text-violet-600">criptomonedas</span>
         </p>
-
         <SliderCoin />
+        <div className="w-full ">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-4">
+            <div className="col-span-12 md:col-span-8 bg-white rounded-lg shadow-lg p-6">
+              Aqui va la grafica
+            </div>
+            <div className="col-span-12 md:col-span-4">
+              <Details />
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
 
 
 
