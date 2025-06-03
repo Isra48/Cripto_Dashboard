@@ -73,7 +73,7 @@ const Ranking = () => {
         <div className="col-span-12 md:col-span-8 bg-white rounded-lg shadow-lg p-6 mt-4">
 
             <h2 className="flex items-center gap-2 text-lg font-semibold text-black  pl-2 ">
-                <span className="text-xl">📊</span>
+                <span className="text-xl">💲</span>
                 Top 10 Criptomonedas
             </h2>
             <p className="text-sm text-gray-500  pl-2">
