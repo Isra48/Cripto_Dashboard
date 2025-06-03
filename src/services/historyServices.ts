@@ -1,5 +1,8 @@
 import type { HistoryPoint } from '../interfaces/crypto.interface'
 import { historyCryptosMock } from '../mocks/historyCryptos.mock'
+const baseUrl = import.meta.env.VITE_BASEURL 
+const apiKey = import.meta.env.VITE_APIKEY
+
 
 const rangeToDaysMap: Record<'24h' | '7d' | '30d' | '90d', number> = {
   '24h': 1,
@@ -15,7 +18,7 @@ export const fetchCryptoHistory = async (
   const days = rangeToDaysMap[range]
 
   const response = await fetch(
-    `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=${days}&x_cg_demo_api_key=CG-fVDb1nKqs5855FB7eqCpP94g`,
+    `${baseUrl}coins/${coinId}/market_chart?vs_currency=usd&days=${days}&x_cg_demo_api_key=${apiKey}`,
     {
       headers: {
         Accept: "application/json",

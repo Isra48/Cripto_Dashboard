@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Dependency directories
+
+
+ENV# dotenv environment variables file
+.env

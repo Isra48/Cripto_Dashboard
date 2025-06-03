@@ -2,7 +2,6 @@
 import  {useEffect } from 'react'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { useQuery } from '@tanstack/react-query'
-import { GridStack } from 'gridstack'
 import 'gridstack/dist/gridstack.min.css'
 import './App.css'
 import SliderCoin from './components/SliderCoins'
@@ -31,25 +30,19 @@ const { data: coins = [], isLoading, error } = useQuery<CryptoCoin[], Error>({
   }
 }, [coins, initializeFirstCoin])
 
-  useEffect(() => {
-    GridStack.init({
-      float: true,
-      cellHeight: 100,
 
-    })
-  }, [])
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 flex justify-center">
       <div className="w-full max-w-screen-xl px-4 py-8">
-        <h1 className="text-6xl font-extrabold text-center text-violet-700 tracking-tight drop-shadow-md">
-          BitBoard
-          <span className="block text-xl font-medium text-violet-400 tracking-widest mt-2">
+        <h1 className="text-6xl font-extrabold text-center text-[#2e9f30] tracking-tight drop-shadow-md">
+         kubo.bitBoard
+          <span className="block text-xl font-medium text-sky-500 tracking-widest mt-2">
             your intelligent crypto dashboard
           </span>
         </h1>
         <p className="mt-2 text-lg text-center text-gray-700">
           Visualización en tiempo real de las principales{' '}
-          <span className="font-semibold text-violet-600">criptomonedas</span>
+          <span className="font-semibold text-sky-600">criptomonedas</span>
         </p>
 
         {isLoading ? (
