@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, Avatar, } from "@heroui/react";
+import { Card, CardHeader,  Avatar, } from "@heroui/react";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@heroui/react";
 import {Chip} from "@heroui/react";
 

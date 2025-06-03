@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, CardFooter, Divider, Link, Image } from "@heroui/react";
+import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 
 const SliderCoins = () => {
   return (

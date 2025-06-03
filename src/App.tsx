@@ -6,6 +6,8 @@ import 'gridstack/dist/gridstack.min.css'
 import './App.css'
 import SliderCoin from './components/SliderCoins'
 import Details from './components/Details'
+import Ranking from './components/Ranking'
+
 
 function FakeQueryTest() {
   const { data, isLoading } = useQuery({
@@ -30,7 +32,7 @@ function App() {
     })
   }, [])
 
- 
+
 
 
   return (
@@ -56,18 +58,9 @@ function App() {
               <Details />
             </div>
           </div>
-
-
-
-
-
-
         </div>
 
-
-
-
-
+      <Ranking/>
 
 
         <ReactQueryDevtools initialIsOpen={false} />
