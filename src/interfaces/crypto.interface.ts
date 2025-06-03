@@ -32,3 +32,9 @@ export interface CryptoCoin {
   roi: Roi | null;
   last_updated: string;
 }
+
+export interface HistoryCoin {
+ prices: [number, number][];
+ market_caps: [number, number][];
+ total_volumes: [number, number][];
+}

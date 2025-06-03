@@ -1,5 +1,5 @@
 
-import  { useEffect } from 'react'
+import  {useEffect } from 'react'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { useQuery } from '@tanstack/react-query'
 import { GridStack } from 'gridstack'
@@ -11,14 +11,24 @@ import Ranking from './components/Ranking'
 import { fetchTopCryptos } from './services/cryptoServices'
 import { Skeleton } from '@heroui/react'
 import type { CryptoCoin } from './interfaces/crypto.interface'
+import { useCryptoStore } from './stores/useCryptoStore'
 
 
 function App() {
+ 
 const { data: coins = [], isLoading, error } = useQuery<CryptoCoin[], Error>({
   queryKey: ['top-cryptos'],
   queryFn: fetchTopCryptos,
 });
 
+ const initializeFirstCoin = useCryptoStore((s) => s.initializeFirstCoin);
+
+
+  useEffect(() => {
+  if (coins.length > 0) {
+    initializeFirstCoin(coins)
+  }
+}, [coins, initializeFirstCoin])
 
   useEffect(() => {
     GridStack.init({
