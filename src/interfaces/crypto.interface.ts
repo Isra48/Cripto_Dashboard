@@ -38,3 +38,8 @@ export interface HistoryCoin {
  market_caps: [number, number][];
  total_volumes: [number, number][];
 }
+
+export type HistoryPoint = {
+  date: string
+  price: number
+}

@@ -12,6 +12,7 @@ import { fetchTopCryptos } from './services/cryptoServices'
 import { Skeleton } from '@heroui/react'
 import type { CryptoCoin } from './interfaces/crypto.interface'
 import { useCryptoStore } from './stores/useCryptoStore'
+import CryptoChart from './components/CryptoChart'
 
 
 function App() {
@@ -73,9 +74,9 @@ const { data: coins = [], isLoading, error } = useQuery<CryptoCoin[], Error>({
 
         <div className="w-full ">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-4">
-            <div className="col-span-12 md:col-span-8 bg-white rounded-lg shadow-lg p-6">
-              Aqui va la grafica
-            </div>
+          <div className="col-span-12 md:col-span-8">
+  <CryptoChart />
+</div>
             <div className="col-span-12 md:col-span-4">
               <Details />
             </div>

@@ -44,7 +44,7 @@ if (!selectedCoin) {
   const value = selectedCoin.price_change_percentage_24h;
 
   return (
-    <Card className="w-full p-4">
+    <Card className="w-full p-4 h-full">
       <h2 className="flex items-center gap-2 text-lg font-semibold text-black mb-4 pl-2">
         <span className="text-xl">📊</span>
         Detalles
