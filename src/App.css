@@ -1,0 +1,22 @@
+.scrollbar-hover {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.scrollbar-hover::-webkit-scrollbar {
+  height: 0px;
+}
+
+/* Mostrar scrollbar en hover */
+.scrollbar-hover:hover {
+  scrollbar-width: thin;
+}
+.scrollbar-hover:hover::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-hover:hover::-webkit-scrollbar-thumb {
+  background-color: #d4d4d4;
+  border-radius: 9999px;
+}
+.scrollbar-hover:hover::-webkit-scrollbar-track {
+  background-color: transparent;
+}

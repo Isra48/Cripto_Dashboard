@@ -2,9 +2,10 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { GridStack } from 'gridstack'
-import 'gridstack/dist/gridstack.min.css'
 
+import 'gridstack/dist/gridstack.min.css'
 import './App.css'
+import SliderCoin from './components/SliderCoins'
 
 function FakeQueryTest() {
   const { data, isLoading } = useQuery({
@@ -25,34 +26,37 @@ function App() {
     GridStack.init({
       float: true,
       cellHeight: 100,
-      disableOneColumnMode: true,
+
     })
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 flex flex-col items-center justify-center p-6">
-      <h1 className="text-5xl font-extrabold text-center text-violet-600 tracking-tight drop-shadow-md underline decoration-wavy decoration-pink-500 p-6 rounded-xl bg-white shadow-lg">
-        React Query + Gridstack
-      </h1>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 flex justify-center">
+      <div className="w-full max-w-screen-xl px-4 py-8">
+        <h1 className="text-6xl font-extrabold text-center text-violet-700 tracking-tight drop-shadow-md">
+          BitBoard
+          <span className="block text-xl font-medium text-violet-400 tracking-widest mt-2">
+            your intelligent crypto dashboard
+          </span>
+        </h1>
+        <p className="mt-2 text-lg text-center text-gray-700">
+          Visualización en tiempo real de las principales{' '}
+          <span className="font-semibold text-violet-600">criptomonedas</span>
+        </p>
 
-      <FakeQueryTest />
+        <SliderCoin />
 
-      <div className="grid-stack w-full max-w-4xl mt-10">
-        <div className="grid-stack-item" gs-x="0" gs-y="0" gs-width="6" gs-height="2">
-          <div className="grid-stack-item-content bg-white shadow p-4 rounded">
-            Widget 1
-          </div>
-        </div>
-        <div className="grid-stack-item" gs-x="6" gs-y="0" gs-width="6" gs-height="2">
-          <div className="grid-stack-item-content bg-white shadow p-4 rounded">
-            Widget 2
-          </div>
-        </div>
+
+
+
+
+
+
+        <ReactQueryDevtools initialIsOpen={false} />
       </div>
-
-      <ReactQueryDevtools initialIsOpen={false} />
     </div>
   )
 }
+
 
 export default App
