@@ -24,7 +24,9 @@ const CryptoChart = () => {
     enabled: !!selectedCoin,
   })
 
-  if (!selectedCoin) {
+  if (!selectedCoin) return null
+
+  if (isLoading) {
     return (
       <div className="bg-white rounded-lg shadow-lg p-6 w-full">
         <Skeleton className="h-6 w-1/2 mb-4" />
@@ -46,7 +48,7 @@ const CryptoChart = () => {
             {selectedCoin.name} ({selectedCoin.symbol.toUpperCase()})
           </h3>
         </div>
-     <div className="flex flex-wrap gap-2 justify-center sm:justify-end">
+        <div className="flex flex-wrap gap-2 justify-center sm:justify-end">
           {timeRanges.map((label) => (
             <Button
               key={label}
@@ -63,13 +65,21 @@ const CryptoChart = () => {
 
       <p className="text-sm text-gray-500 mb-4">Precio histórico en USD</p>
 
-      {isLoading || !data ? (
+      {error instanceof Error ? (
+        <div className="w-full">
+          <div className="bg-red-100 text-red-700 text-sm p-4 rounded-lg flex items-start gap-2">
+            <span className="text-xl">⚠️</span>
+            <div>
+              <p className="font-semibold">No se pudo cargar el gráfico</p>
+              <p>{error.message}</p>
+            </div>
+          </div>
+        </div>
+      ) : !data ? (
         <>
           <Skeleton className="h-6 w-1/4 mb-2" />
           <Skeleton className="h-[300px] w-full rounded-lg" />
         </>
-      ) : error instanceof Error ? (
-        <div className="text-red-500 text-sm text-center">{error.message}</div>
       ) : (
         <ResponsiveContainer width="100%" height={300} className="mt-4">
           <LineChart data={data}>
