@@ -1,20 +1,16 @@
+// stores/useCryptoStore.ts
 import { create } from 'zustand'
-
-type Coin = {
-  id: string
-  name: string
-  symbol: string
-  image: string
-  current_price: number
- 
-}
+import type { CryptoCoin } from '../interfaces/crypto.interface'
 
 type CryptoStore = {
-  selectedCoin: Coin | null
-  setSelectedCoin: (coin: Coin) => void
+  selectedCoin: CryptoCoin | null
+  setSelectedCoin: (coin: CryptoCoin) => void
 }
 
 export const useCryptoStore = create<CryptoStore>((set) => ({
   selectedCoin: null,
-  setSelectedCoin: (coin) => set({ selectedCoin: coin }),
+  setSelectedCoin: (coin) => {
+    
+    set({ selectedCoin: coin })
+  },
 }))
